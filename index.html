@@ -1,1 +1,706 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sam Ye | Entrepreneurial Mindset</title>
+    <meta
+      name="description"
+      content="Personal page for Sam Ye, a Babson senior with an entrepreneurial future and a passion for golf."
+    />
+    <style>
+      :root {
+        --bg: #f7f3ee;
+        --panel: rgba(255, 255, 255, 0.72);
+        --card: #ffffff;
+        --ink: #1f2a37;
+        --muted: #56657a;
+        --accent: #154734;
+        --accent-2: #d4a85d;
+        --accent-3: #eef4ef;
+        --shadow: 0 20px 50px rgba(21, 71, 52, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(212, 168, 93, 0.18), transparent 22%),
+          linear-gradient(180deg, #f7f3ee 0%, #f3efe9 100%);
+        color: var(--ink);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .container {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(10px);
+        background: rgba(247, 243, 238, 0.72);
+        border-bottom: 1px solid rgba(31, 42, 55, 0.08);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 0;
+      }
+
+      .brand {
+        font-size: 1.15rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .brand span {
+        color: var(--accent);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        color: var(--muted);
+        font-weight: 600;
+        align-items: center;
+      }
+
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 14px 22px;
+        font-weight: 700;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button.primary {
+        background: var(--accent);
+        color: white;
+        box-shadow: 0 12px 30px rgba(21, 71, 52, 0.2);
+      }
+
+      .button.secondary {
+        background: transparent;
+        border: 1px solid rgba(21, 71, 52, 0.2);
+        color: var(--accent);
+      }
+
+      .hero {
+        padding: 72px 0 42px;
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1.3fr 0.9fr;
+        gap: 42px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        background: rgba(21, 71, 52, 0.08);
+        color: var(--accent);
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        font-size: clamp(2.8rem, 5vw, 5.1rem);
+        line-height: 0.95;
+        margin: 18px 0 16px;
+        letter-spacing: -0.06em;
+      }
+
+      .highlight {
+        color: var(--accent);
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 1.1rem;
+        line-height: 1.7;
+        max-width: 620px;
+      }
+
+      .hero-actions {
+        margin-top: 28px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      .mini-stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 30px;
+      }
+
+      .stat {
+        background: rgba(255, 255, 255, 0.55);
+        border: 1px solid rgba(21, 71, 52, 0.08);
+        border-radius: 18px;
+        padding: 22px 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .stat .number {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--accent);
+      }
+
+      .stat .label {
+        font-size: 0.82rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-top: 6px;
+      }
+
+      .profile-card {
+        position: relative;
+        background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(238,244,239,0.9));
+        border: 1px solid rgba(21, 71, 52, 0.08);
+        border-radius: 28px;
+        padding: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .profile-card::before {
+        content: "";
+        position: absolute;
+        inset: 12px;
+        border-radius: 22px;
+        border: 1px solid rgba(21, 71, 52, 0.08);
+        pointer-events: none;
+      }
+
+      .profile-visual {
+        position: relative;
+        min-height: 450px;
+        border-radius: 24px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #dfe8e2, #f5e7cc 52%, #dce7e2);
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        padding: 18px;
+      }
+
+      .avatar {
+        width: 78%;
+        height: 76%;
+        border-radius: 30% 30% 18% 18% / 24% 24% 18% 18%;
+        background: linear-gradient(160deg, #d1a064, #b7713e 28%, #8b4b2d 62%, #f8f5f0 100%);
+        position: relative;
+        box-shadow: inset 0 0 0 2px rgba(21, 71, 52, 0.08);
+      }
+
+      .avatar::before {
+        content: "";
+        position: absolute;
+        width: 46%;
+        height: 34%;
+        background: #f4d9ba;
+        border-radius: 50% 50% 42% 42%;
+        top: 12%;
+        left: 27%;
+      }
+
+      .avatar::after {
+        content: "";
+        position: absolute;
+        width: 62%;
+        height: 44%;
+        background: #154734;
+        border-radius: 40% 40% 18% 18%;
+        bottom: 0;
+        left: 19%;
+      }
+
+      .badge {
+        position: absolute;
+        right: 20px;
+        top: 18px;
+        background: rgba(255,255,255,0.8);
+        border: 1px solid rgba(21,71,52,0.08);
+        border-radius: 14px;
+        padding: 12px 14px;
+        font-weight: 700;
+        color: var(--accent);
+        box-shadow: 0 12px 20px rgba(27, 54, 42, 0.08);
+      }
+
+      section {
+        padding: 40px 0;
+      }
+
+      .section-title {
+        font-size: clamp(2rem, 3vw, 3rem);
+        letter-spacing: -0.05em;
+        margin: 0 0 14px;
+      }
+
+      .section-intro {
+        color: var(--muted);
+        font-size: 1.06rem;
+        line-height: 1.8;
+        margin: 0 0 28px;
+        max-width: 740px;
+      }
+
+      .about-grid,
+      .journey-grid,
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .card {
+        background: var(--panel);
+        border: 1px solid rgba(21, 71, 52, 0.08);
+        border-radius: 22px;
+        padding: 24px;
+        box-shadow: 0 20px 40px rgba(31,42,55,0.04);
+      }
+
+      .card h3 {
+        margin: 0 0 12px;
+        font-size: 1.3rem;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .chip {
+        background: var(--accent-3);
+        color: var(--accent);
+        border: 1px solid rgba(21, 71, 52, 0.08);
+        border-radius: 999px;
+        padding: 10px 14px;
+        font-weight: 700;
+      }
+
+      .quote {
+        margin-top: 24px;
+        padding: 24px 28px;
+        border-left: 4px solid var(--accent-2);
+        background: rgba(212, 168, 93, 0.08);
+        border-radius: 0 18px 18px 0;
+        color: var(--ink);
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 18px;
+        margin-top: 18px;
+      }
+
+      .timeline-item {
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        gap: 18px;
+        align-items: start;
+        background: rgba(255,255,255,0.52);
+        border: 1px solid rgba(21,71,52,0.08);
+        border-radius: 18px;
+        padding: 20px 22px;
+      }
+
+      .year {
+        font-size: 0.9rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        padding-top: 4px;
+      }
+
+      .timeline-item h4 {
+        margin: 0 0 8px;
+        font-size: 1.25rem;
+      }
+
+      .timeline-item p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .golf-panel {
+        background: linear-gradient(135deg, rgba(21, 71, 52, 0.92), rgba(19, 38, 28, 0.92));
+        color: white;
+        border-radius: 28px;
+        padding: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .golf-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 22px;
+        align-items: center;
+      }
+
+      .golf-panel h3 {
+        font-size: clamp(1.8rem, 3vw, 2.8rem);
+        margin: 0 0 12px;
+        letter-spacing: -0.04em;
+      }
+
+      .golf-panel p {
+        color: rgba(255,255,255,0.8);
+        line-height: 1.8;
+        margin: 0;
+      }
+
+      .course-markers {
+        display: grid;
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .course-marker {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 16px;
+        border-radius: 14px;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .hole {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: rgba(212,168,93,0.2);
+        color: #f8d796;
+        font-weight: 800;
+      }
+
+      .contact-card {
+        text-align: center;
+        background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(238,244,239,0.82));
+        border: 1px solid rgba(21,71,52,0.08);
+        border-radius: 24px;
+        padding: 32px 24px;
+        box-shadow: var(--shadow);
+      }
+
+      .contact-card h3 {
+        margin: 0 0 10px;
+        font-size: clamp(2rem, 3vw, 2.8rem);
+        letter-spacing: -0.04em;
+      }
+
+      .contact-card p {
+        margin: 0 auto 22px;
+        max-width: 620px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      footer {
+        padding: 26px 0 40px;
+        text-align: center;
+        color: var(--muted);
+      }
+
+      @media (max-width: 900px) {
+        .hero-inner,
+        .golf-grid,
+        .about-grid,
+        .journey-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-links {
+          display: none;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .mini-stats {
+          grid-template-columns: 1fr;
+        }
+
+        .timeline-item {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding-top: 48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a href="#top" class="brand">Sam <span>Ye</span></a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#journey">Journey</a>
+          <a href="#golf">Golf</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a href="#contact" class="button primary">Let’s Connect</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-inner">
+          <div>
+            <span class="eyebrow">Babson Senior</span>
+            <h1>
+              I’m building a future where<br />
+              <span class="highlight">ideas become businesses</span>
+            </h1>
+            <p class="subtitle">
+              I’m Sam Ye, a Babson senior driven by curiosity, ambition, and the belief that
+              the best companies start with bold questions and disciplined execution. I’m
+              passionate about entrepreneurship, leadership, and creating value that makes a
+              real impact.
+            </p>
+            <div class="hero-actions">
+              <a href="#journey" class="button primary">My Story</a>
+              <a href="#golf" class="button secondary">Why Golf</a>
+            </div>
+            <div class="mini-stats" aria-label="Quick statistics">
+              <div class="stat">
+                <div class="number">Senior</div>
+                <div class="label">Babson</div>
+              </div>
+              <div class="stat">
+                <div class="number">Startup</div>
+                <div class="label">Mindset</div>
+              </div>
+              <div class="stat">
+                <div class="number">Golf</div>
+                <div class="label">Passion</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-card" aria-label="Profile card">
+            <div class="badge">Entrepreneur at heart</div>
+            <div class="profile-visual">
+              <div class="avatar" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-intro">
+            I’ve always been motivated by the challenge of turning an idea into something that
+            solves a real problem. At Babson, I’m learning how to think like a founder—how to
+            spot opportunities, move quickly, and build with intention. I value creativity,
+            resilience, and the courage to take smart risks.
+          </p>
+
+          <div class="about-grid">
+            <article class="card">
+              <h3>Entrepreneurial mindset</h3>
+              <p>
+                I enjoy exploring problems from multiple angles, testing new ideas, and learning
+                from feedback. I want to build ventures that create both value and meaning.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Leadership style</h3>
+              <p>
+                I believe strong leaders listen closely, work with purpose, and empower others to
+                do their best. I want to lead teams that are curious, motivated, and resilient.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Long-term vision</h3>
+              <p>
+                My goal is to grow into a founder who can build sustainable businesses, inspire
+                people, and leave a positive impact in the world.
+              </p>
+            </article>
+          </div>
+
+          <div class="chip-row" aria-label="Interests and strengths">
+            <span class="chip">Innovation</span>
+            <span class="chip">Strategy</span>
+            <span class="chip">Problem-solving</span>
+            <span class="chip">Leadership</span>
+            <span class="chip">Business building</span>
+            <span class="chip">Execution</span>
+          </div>
+
+          <div class="quote">
+            “Success is not about waiting for the perfect moment. It’s about preparing well,
+            taking action, and learning fast enough to keep growing.”
+          </div>
+        </div>
+      </section>
+
+      <section id="journey">
+        <div class="container">
+          <h2 class="section-title">My Journey</h2>
+          <p class="section-intro">
+            From the classroom to the boardroom and the golf course, I’m developing the habits
+            that help me grow as both a person and a future founder.
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="year">Now</div>
+              <div>
+                <h4>Babson Senior</h4>
+                <p>
+                  I’m focused on developing the foundation I need to launch something meaningful—
+                  through business courses, leadership experiences, and practical problem-solving.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="year">Next</div>
+              <div>
+                <h4>Build my own path</h4>
+                <p>
+                  I want to explore ventures, validate ideas, and learn what it truly takes to
+                  bring a business from concept to execution.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="year">Future</div>
+              <div>
+                <h4>Founder and operator</h4>
+                <p>
+                  My long-term goal is to build a company that solves a real problem, creates
+                  value for customers, and inspires others to think bigger.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="golf">
+        <div class="container golf-panel">
+          <div class="golf-grid">
+            <div>
+              <h3>Golf teaches me how to compete and stay patient.</h3>
+              <p>
+                Golf has shaped my mindset in a way that connects directly with entrepreneurship.
+                It demands focus, discipline, and the ability to recover after mistakes. Every shot
+                is a lesson in composure, strategy, and staying present. I love the challenge of
+                improving my game while learning how to keep a calm, steady mindset under pressure.
+              </p>
+              <div class="course-markers">
+                <div class="course-marker">
+                  <div class="hole">⛳</div>
+                  <div>Focus under pressure</div>
+                </div>
+                <div class="course-marker">
+                  <div class="hole">🎯</div>
+                  <div>Patience and precision</div>
+                </div>
+                <div class="course-marker">
+                  <div class="hole">🏌️</div>
+                  <div>Growth through practice</div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="profile-card" style="padding: 22px; background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12);">
+                <div class="profile-visual" style="min-height: 360px; background: linear-gradient(135deg, rgba(127,147,138,0.8), rgba(212,168,93,0.6), rgba(21,71,52,0.8)); border-radius: 20px;">
+                  <div class="avatar" style="background: linear-gradient(160deg, #d7b57d, #7c9a82 30%, #154734 70%, #f8f5f0 100%); width: 70%; height: 74%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container contact-grid">
+          <div class="contact-card" style="grid-column: 1 / -1;">
+            <h3>Let’s build something meaningful.</h3>
+            <p>
+              I’m always open to conversations about entrepreneurship, innovation, leadership,
+              and the future of business. Whether you’re looking to connect, collaborate, or
+              simply exchange ideas, I’d love to hear from you.
+            </p>
+            <div class="hero-actions" style="justify-content: center; margin-top: 10px;">
+              <a href="mailto:samye@example.com" class="button primary">samye@example.com</a>
+              <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" class="button secondary">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">© <span id="year"></span> Sam Ye — Building ideas, chasing impact, and loving the game.</div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
